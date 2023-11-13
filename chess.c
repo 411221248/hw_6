@@ -83,8 +83,15 @@ short checkColor(char color){
 int main(){
     short col=1;
     while(1){
+        printf("\n   ");
+        for (int i = 0; i < 8; i++)
+            printf("%d ",i);
+        printf("\n--+");
+        for (int i = 0; i < 8; i++)
+            printf("--");
         printf("\n");
         for (int i = 0; i < 8; i++){
+            printf("%d |",i);
             for (int j = 0; j < 8; ){
                 next[i][j]='0';
                 printf("%c ",chess[i][j]);
