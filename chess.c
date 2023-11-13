@@ -83,7 +83,8 @@ short checkColor(char color){
 int main(){
     short col=1;
     while(1){
-        printf("\n   ");
+        (col==1)?printf("1 你黑棋下"):printf("2 電腦白棋下");
+        printf("\n  |");
         for (int i = 0; i < 8; i++)
             printf("%d ",i);
         printf("\n--+");
@@ -116,7 +117,7 @@ int main(){
         if(col==1){
             col=2;
             if(!checkColor('1')){
-                printf("黑子無法下");
+                printf("黑子無法下\n");
                 continue;
             }
             printInput('1');
@@ -125,7 +126,7 @@ int main(){
             printf("input ");
             scanf("%1d%c%1d",&x,&haha,&y);
             if (next[x][y]!='1'&&next[x][y]!='3'){
-                printf("這裡不能下!");
+                printf("這裡不能下!\n");
                 col=1;
                 continue;
             }
@@ -135,7 +136,7 @@ int main(){
         }else{
             col=1;
             if(!checkColor('2')){
-                printf("白子無法下");
+                printf("白子無法下\n");
                 continue;
             }
             
@@ -158,6 +159,7 @@ int main(){
             for (short i = -1; i < 2; i++)
                 for (short j = -1; j < 2; j++)
                     filp(maxX,maxY,i,j,'2',1);        
+            printf("電腦下%d %d,可翻%d個\n",maxX,maxY,maxF);
         }
         
     }
